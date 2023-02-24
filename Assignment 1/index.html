@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HMS Dashboard</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js"
+    integrity="sha512-qKyIokLnyh6oSnWsc5h21uwMAQtljqMZZT17CIMXuCQNIfFSFF4tJdMOaJHL9fQdJUANid6OB6DRR0zdHrbWAw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+  </script>
+
+
+  </script>
+</head>
+
+<body>
+
+  <nav id="sidebar">
+    <div class="sidebar-header align-content-center mx-auto text-center">
+      <h3>
+        <img src="img/hc.png" class="img-fluid" /><span>HealthEase</span>
+      </h3>
+    </div>
+    <ul class="list-unstyled components">
+      <li class="active">
+        <a href="#" class="dashboard"><i class="material-icons">dashboard</i><span>Dashboard</span></a>
+      </li>
+      <li>
+        <a href="#" class="dashboard"><i class="material-icons">query_stats</i><span>Analytics</span></a>
+      </li>
+      <div class="small-screen navbar-display">
+        <li class="dropdown d-lg-none d-md-block d-xl-none d-sm-block">
+          <a href="#homeSubmenu0" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <i class="material-icons">notifications</i><span> 4 notification</span></a>
+          <ul class="collapse list-unstyled menu" id="homeSubmenu0">
+            <li>
+              <a href="#">You have 5 new messages</a>
+            </li>
+            <li>
+              <a href="#">You're now friend with Mike</a>
+            </li>
+            <li>
+              <a href="#">Wish Mary on her birthday!</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+          <a href="#"><i class="material-icons">apps</i><span>apps</span></a>
+        </li>
+
+        <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+          <a href="#"><i class="material-icons">person</i><span>user</span></a>
+        </li>
+
+        <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+          <a href="#"><i class="material-icons">settings</i><span>setting</span></a>
+        </li>
+      </div>
+
+      <li class="dropdown">
+        <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+          <i class="material-icons">contacts</i><span>Patients</span></a>
+        <ul class="collapse list-unstyled menu" id="homeSubmenu1">
+          <li>
+            <a href="./home1.html">Home 1</a>
+          </li>
+          <li>
+            <a href="#">Home 2</a>
+          </li>
+          <li>
+            <a href="#">Home 3</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+          <i class="material-icons">supervised_user_circle</i><span>Doctors</span></a>
+        <ul class="collapse list-unstyled menu" id="pageSubmenu2">
+          <li>
+            <a href="#">Page 1</a>
+          </li>
+          <li>
+            <a href="#">Page 2</a>
+          </li>
+          <li>
+            <a href="#">Page 3</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+          <i class="material-icons">group</i>
+
+          <span>Staff</span></a>
+        <ul class="collapse list-unstyled menu" id="pageSubmenu3">
+          <li>
+            <a href="#">Page 1</a>
+          </li>
+          <li>
+            <a href="#">Page 2</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#" class="dashboard"><i class="material-icons">inventory</i><span>Inventory</span></a>
+      </li>
+      <li>
+        <a href="#" class="dashboard"><i class="material-icons">event</i><span>Appointments</span></a>
+      </li>
+      <li>
+        <a href="#" class="dashboard"><i class="material-icons">question_answer</i><span>Feedback</span></a>
+      </li>
+      <div class="divider">
+        <li>
+          <a href="#" class="dashboard"><i class="material-icons">info</i><span>About</span></a>
+        </li>
+
+        <li>
+          <a href="#" class="dashboard"><i class="material-icons">fact_check</i><span>Terms & Conditions</span></a>
+        </li>
+        <li>
+          <a href="#" class="dashboard"><i class="material-icons">logout</i><span>Logout</span></a>
+        </li>
+      </div>
+    </ul>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+    <div class="top-navbar">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <button type="button" id="sidebarCollapse" class="d-xl-block d-lg-block d-md-none d-none">
+            <span class="material-icons">arrow_back_ios</span>
+          </button>
+
+          <a class="navbar-brand fw-bold" href="#"> Dashboard </a>
+
+          <button class="d-inline-block d-lg-none ml-auto more-button" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="material-icons">more_vert</span>
+          </button>
+
+          <div class="collapse navbar-collapse d-lg-block d-xl-block d-sm-none d-md-none d-none"
+            id="navbarSupportedContent ">
+            <ul class="nav navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="material-icons">info</span>
+                </a>
+              </li>
+              <li class="dropdown nav-item">
+                <a class="nav-link" href="#" data-toggle="dropdown">
+                  <span class="material-icons">person</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="align-content-center justify-content-center">
+                    <a href="#">My Profile</a>
+                  </li>
+                  <li>
+                    <a href="#">Settings</a>
+                  </li>
+                  <li>
+                    <a href="#">Logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="main-content">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header">
+              <div class="icon icon-warning">
+                <span class="material-icons">personal_injury</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <p class="category"><strong>Total Patients</strong></p>
+              <h3 class="card-title">1,340</h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons text-info">info</i>
+                <a href="#pablo">View Patients List</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header">
+              <div class="icon icon-rose">
+                <span class="material-icons">domain_add</span>
+              </div>
+            </div>
+            <div class="card-content">
+              <p class="category"><strong>Admitted</strong></p>
+              <h3 class="card-title">202</h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons">local_offer</i> See detailed reports
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header">
+              <div class="icon icon-success">
+                <span class="material-icons"> medication </span>
+              </div>
+            </div>
+            <div class="card-content">
+              <p class="category"><strong>Doctors</strong></p>
+              <h3 class="card-title">70</h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons">medication</i> List of all Doctors
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header">
+              <div class="icon icon-info">
+                <span class="material-icons"> group </span>
+              </div>
+            </div>
+            <div class="card-content">
+              <p class="category"><strong>Staff</strong></p>
+              <h3 class="card-title">195</h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <i class="material-icons">update</i> Just Updated
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-7 col-md-12">
+          <div class="card" style="min-height: 400px">
+            <div class="card-header card-header-text">
+              <h4 class="card-title" id="record_title">Patient Records</h4>
+              <p class="category">Records from 21-01-2023 to 01-02-2023</p>
+            </div>
+            <div class="card-content table-responsive">
+              <table class="table table-hover">
+                <thead class="font-weight-bold">
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Disease</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>James holmoes</td>
+                    <td>35</td>
+                    <td>Male</td>
+                    <td class="view_rep">View report</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Brad Williams</td>
+                    <td>49</td>
+                    <td>Male</td>
+                    <td class="view_rep">View report</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Lucy Foxx</td>
+                    <td>28</td>
+                    <td>Female</td>
+                    <td class="view_rep">View report</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>John Doe</td>
+                    <td>39</td>
+                    <td>Male</td>
+                    <td class="view_rep">View report</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Drake Wolams</td>
+                    <td>22</td>
+                    <td>Male</td>
+                    <td class="view_rep">View report</td>
+                  </tr>
+                  <td>6</td>
+                  <td>Julien Walter</td>
+                  <td>33</td>
+                  <td>Female</td>
+                  <td class="view_rep">View report</td>
+                  </tr>
+
+
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-12">
+          <div class="card" style="min-height: 400px">
+            <div class="card-header card-header-text">
+              <h4 class="card-title" id="record_title" style="margin-bottom:20px;">Admissions Rate </h4>
+              <canvas id="myChart" style="width:100%;max-width:900px"></canvas>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <nav class="d-flex">
+              <ul class="m-0 p-0">
+                <li>
+                  <a href="#"> Home </a>
+                </li>
+                <li>
+                  <a href="#"> Appointments </a>
+                </li>
+                <li>
+                  <a href="#"> About </a>
+                </li>
+                <li>
+                  <a href="#"> Info </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-md-6">
+            <p class="copyright d-flex justify-content-end">
+              &copy
+              <a href="#"> HealthEase</a>2023
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#sidebarCollapse").on("click", function () {
+        $("#sidebar").toggleClass("active");
+        $("#content").toggleClass("active");
+      });
+
+      $(".more-button,.body-overlay").on("click", function () {
+        $("#sidebar,.body-overlay").toggleClass("show-nav");
+      });
+    });
+    var xValues = [2016,2017,2018,2019,2020,2021,2022,2023];
+    var yValues = [50,100,150,275,400,250,400,350];
+
+    new Chart("myChart", {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [{
+          fill: true,        
+          pointRadius: 0,
+          lineTension: 0,
+          backgroundColor: "rgb(0, 148, 149,0.9)",
+          borderColor: "rgba(0,0,255,0.1)",
+          data: yValues
+        }]
+      },
+      options: {
+        legend: { display: false },
+        scales: {
+          yAxes: [{ ticks: { min: 6, max: 800 } }],
+        }
+      }
+    });
+
+    var barxValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+var baryValues = [55, 49, 44, 24, 15];
+var barColors = ["red", "green","blue","orange","brown"];
+
+new Chart("mybarChart", {
+  type: "bar",
+  data: {
+    labels: barxValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: baryValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "World Wine Production 2018"
+    }
+  }
+});    
+  </script>
+</body>
+
+</html>
